@@ -5,9 +5,11 @@ from django.contrib.staticfiles.urls import staticfiles_urlpatterns
 from django.conf.urls.static import static
 from django.conf import settings
 from mysite.views import *
-from mysite.autentication import*
+from mysite.autentication import login, logout, registrasi
+
 urlpatterns = [
     path('admin', admin.site.urls),
+    path('api-auth/', include('rest_framework.urls')),
 
     path('', index),
     path('artikel/<int:id>', detail_artikel, name='detail_artikel'),
@@ -16,11 +18,11 @@ urlpatterns = [
     path('galeri',galeri, name='galeri'),
     path('about',about, name='about'),
 
-    path('dashboard',dashboard, name='dashboard'),
+    path('dashboard/',dashboard, name='dashboard'),
     path('dashboard/artikel_list', artikel_list, name='artikel_list'),
 
-    path('dashboard',include ("artikel.urls")),
-
+    path('dashboard/',include ("artikel.urls")),
+    path('api/',include ("artikel.urls_api")),
 
     path('auth-login', login, name='login'),
     path('auth-logout', logout, name='logout'),
