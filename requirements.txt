@@ -6,7 +6,7 @@ djangorestframework==3.16.0
 Markdown==3.8.2
 mysql-connector-python==9.2.0
 pillow==11.1.0
-PyMySQL==1.1.1
+PyMySQL==
 sqlparse==0.5.3
 tzdata==2025.2
-gunicorn==21.2.0
+gunicorn==
