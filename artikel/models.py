@@ -19,7 +19,7 @@ class Kategori(models.Model):
 class ArtikelBlog(models.Model):
     kategori = models.ForeignKey(Kategori, on_delete=models.CASCADE)
     judul = models.CharField(max_length=200)
-    konten = CKEditor5Field('Text', config_name='extends', blank=True, null=True)
+    konten = CKEditor5Field('Text', config_name='extends', default='Konten default')
     gambar = models.ImageField(upload_to="artikel/", blank=True, null=True)
     status = models.BooleanField(default=False)
 
