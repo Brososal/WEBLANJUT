@@ -3,3 +3,4 @@ gunicorn
 PyMySQL
 pillow
 django-heroku
+django-ckeditor-5==0.2.18
